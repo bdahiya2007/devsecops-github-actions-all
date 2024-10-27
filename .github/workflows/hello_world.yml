@@ -16,6 +16,6 @@ jobs:
       - name: Maven Build install
         run: mvn --batch-mode --update-snapshots verify
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
+        uses: snyk/actions/maven-3-jdk-17@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
