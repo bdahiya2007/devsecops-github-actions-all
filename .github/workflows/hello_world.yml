@@ -15,6 +15,11 @@ jobs:
           cache: maven
       - name: Maven Build install
         run: mvn -B package --file pom.xml
+      - name: Show java
+        run: |
+         echo $JAVA_HOME
+         echo $PATH
+         java -version 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven-3-jdk-17@master
         env:
